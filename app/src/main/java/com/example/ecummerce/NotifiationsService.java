@@ -70,6 +70,12 @@ public class NotifiationsService extends Service {
         }
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (listener != null) listener.remove();
+    }
+
     private void implementListener() {
         listener = db.collection("<ADD A COLLECTION HERE>").addSnapshotListener((value, error) -> {
             if (error != null) {
