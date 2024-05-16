@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".verify_code_sent">
+
+    <FrameLayout
+        android:background="@color/bg_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_weight="1"
+                style="@style/no_hint_txt_input"
+                android:layout_width="0dp"
+                app:boxBackgroundColor="#EEEEEE"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter 6 Digit Code"
+                    android:inputType="phone"
+                    android:maxLength="6" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_gravity="center|top"
+            android:layout_marginTop="90dp"
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/verify" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            style="@style/bold_txt_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oops! Wanna Join?" />
+
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="10dp"
+            style="@style/regular_txt_style"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:text="We Noticed that you Don’t have an\nAccount Recorded to our Database" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginTop="-50dp"
+            style="@style/regular_txt_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify your Number and Let’s Set up your Account!" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:fontFamily="@font/montserrat_semibold"
+            android:id="@+id/button"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_style"
+            android:textAllCaps="false"
+            android:layout_gravity="bottom|center"
+            android:layout_width="wrap_content"
+            android:paddingRight="50dp"
+            android:paddingLeft="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="200dp"
+            android:text="Verify" />
+
+        <TextView
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="100dp"
+            style="@style/regular_txt_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/code" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

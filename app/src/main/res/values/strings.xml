@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ecummerce</string>
+    <string name="logInWithPassword"><u>Log In with Password</u></string>
+    <string name="code"><u>Didn’t Receive a Code?</u></string>
+    <string name="logInWithCode"><u>Log in with Code?</u></string>
+    <string name="learnMore"><u>Learn more</u></string>
+    <string name="phoneNum"><u><i>Phone Number</i></u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

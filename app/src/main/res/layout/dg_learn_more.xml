@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/imageView3"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:srcCompat="@drawable/think" />
+
+            <TextView
+                android:textColor="@color/black"
+                android:id="@+id/textView"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                style="@style/regular_txt_style"
+                android:layout_height="wrap_content"
+                android:text="Your PHONE NUMBER serves as your USERNAME for enhanced accessibility and security. We've observed that many users tend to forget their usernames, leading to login difficulties. By using your phone number, we aim to simplify the login process and minimize the likelihood of forgetting your credentials, ensuring a smoother and more reliable experience." />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_style"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ok" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

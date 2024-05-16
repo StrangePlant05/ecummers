@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LogIn">
+
+        <FrameLayout
+            android:background="@color/bg_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5">
+
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.hbb20.CountryCodePicker
+                    app:ccp_arrowSize="16sp"
+                    app:ccp_showNameCode="false"
+                    app:ccpDialog_cornerRadius="10dp"
+                    app:ccp_autoFormatNumber="true"
+                    app:ccpDialog_showNameCode="true"
+                    app:ccpDialog_allowSearch="false"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:padding="7dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/txt_bg"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_weight="1"
+                    style="@style/no_hint_txt_input"
+                    android:layout_width="0dp"
+
+                    app:boxBackgroundColor="#EEEEEE"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone Number"
+                        android:inputType="phone"
+                        android:maxLength="12" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_gravity="center|top"
+                android:layout_marginTop="60dp"
+                android:id="@+id/imageView"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:src="@drawable/login" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                style="@style/bold_txt_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome!" />
+
+            <TextView
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="10dp"
+                style="@style/regular_txt_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Let’s Get you Started this Won’t Take Long!" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginTop="-50dp"
+                style="@style/regular_txt_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register or Log In With Mobile Number" />
+
+            <TextView
+                android:id="@+id/toPassword"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="275dp"
+                android:layout_marginTop="-50dp"
+                style="@style/regular_txt_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/logInWithPassword" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:fontFamily="@font/montserrat_semibold"
+                android:id="@+id/button"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_style"
+                android:textAllCaps="false"
+                android:layout_gravity="bottom|center"
+                android:layout_width="wrap_content"
+                android:paddingRight="50dp"
+                android:paddingLeft="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="200dp"
+                android:text="Continue" />
+
+            <FrameLayout
+                android:layout_gravity="bottom"
+                android:padding="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_gravity="center|end"
+                    android:layout_width="135dp"
+                    android:layout_height="2dp"
+                    android:background="@drawable/line" />
+
+                <ImageView
+                    android:layout_gravity="center|bottom"
+
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/google_color_svgrepo_com" />
+
+
+                <View
+
+                    android:layout_width="135dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center|start"
+                    android:background="@drawable/line" />
+
+            </FrameLayout>
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
