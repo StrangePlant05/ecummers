@@ -9,15 +9,24 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.IBinder;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.firestore.QuerySnapshot;
+
 public class NotifiationsService extends Service {
+    ListenerRegistration listener;
+    FirebaseFirestore db;
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        // TODO: implement message received and such on here for notifications
-
+        db = FirebaseFirestore.getInstance();
+        implementListener();
 
         showNotification();
         return START_STICKY;
@@ -59,5 +68,16 @@ public class NotifiationsService extends Service {
             startForeground(1, notification);
 
         }
+    }
+
+    private void implementListener() {
+        listener = db.collection("<ADD A COLLECTION HERE>").addSnapshotListener((value, error) -> {
+            if (error != null) {
+                Log.e("Listener for firebase error occured", error.toString());
+                return;
+            }
+
+            // TODO: implement some stuff here
+        });
     }
 }
