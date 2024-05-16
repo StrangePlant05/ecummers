@@ -53,6 +53,8 @@
                 app:layout_constraintTop_toTopOf="@+id/cardView">
 
                 <TextView
+                    android:ellipsize="end"
+                    android:maxLines="2"
                     android:textStyle="bold"
                     android:id="@+id/textView2"
                     style="@style/regular_txt_style"
