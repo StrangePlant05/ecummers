@@ -28,6 +28,7 @@
                 android:orientation="horizontal">
 
                 <com.hbb20.CountryCodePicker
+                    android:id="@+id/picker"
                     app:ccp_arrowSize="16sp"
                     app:ccp_showNameCode="false"
                     app:ccpDialog_cornerRadius="10dp"
@@ -52,9 +53,10 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/number"
                         android:hint="Phone Number"
                         android:inputType="phone"
-                        android:maxLength="12" />
+                        android:maxLength="13" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 

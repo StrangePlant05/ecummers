@@ -26,10 +26,12 @@ public class verify_code_sent extends AppCompatActivity {
         });
 
         bind.button.setOnClickListener(v -> {
-            //TODO: confirm verify code
-            Intent intent = new Intent(verify_code_sent.this, Dashboard.class);
-            startActivity(intent);
-            finish();
+            if(bind.code.getText().toString().equals(getIntent().getStringExtra("code"))){
+                Intent intent = new Intent(verify_code_sent.this, AccountSetUp.class);
+                intent.putExtra("number", getIntent().getStringExtra("number"));
+                startActivity(intent);
+                finish();
+            }
         });
     }
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "902627593730",
+    "project_id": "ecummerce-8a35a",
+    "storage_bucket": "ecummerce-8a35a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902627593730:android:3650ecc95231f4e684211b",
+        "android_client_info": {
+          "package_name": "com.example.ecummerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhWdjghw0d5t3nMFT3bBZwwgF9wb_vnSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

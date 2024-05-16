@@ -37,6 +37,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/code"
                         android:hint="Enter 6 Digit Code"
                         android:inputType="phone"
                         android:maxLength="6" />
