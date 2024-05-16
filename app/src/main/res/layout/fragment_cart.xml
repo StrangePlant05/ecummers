@@ -100,6 +100,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/rv_cart_items"
         android:layout_marginTop="15dp"
         android:id="@+id/rv_cart"
         android:layout_width="match_parent"
