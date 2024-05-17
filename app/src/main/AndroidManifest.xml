@@ -21,6 +21,14 @@
             android:name=".DisplayBeforePurchase"
             android:exported="true">
 
+
+
+        </activity>
+
+        <activity
+            android:name=".CheckoutActivity"
+            android:exported="true" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,10 +36,6 @@
             </intent-filter>
 
         </activity>
-
-        <activity
-            android:name=".CheckoutActivity"
-            android:exported="false" />
 
         <service
             android:name=".NotifiationsService"

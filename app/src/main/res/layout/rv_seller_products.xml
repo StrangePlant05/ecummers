@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/waa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="1" />
+
+                    <ImageView
+                        app:layout_constraintEnd_toEndOf="@id/waa"
+                        app:layout_constraintDimensionRatio="1:1"
+                        android:id="@+id/img"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:src="@drawable/ic_launcher_background"
+                        android:scaleType="centerCrop" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:id="@+id/name"
+                    style="@style/regular_txt_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bavin Fast Charging Cable Type C / Micro"
+                    android:textColor="@color/black"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_marginHorizontal="10dp"
+                    android:textSize="16sp"
+                    android:id="@+id/price"
+                    style="@style/regular_txt_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2$"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+</layout>

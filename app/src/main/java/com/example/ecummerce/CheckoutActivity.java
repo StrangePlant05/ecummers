@@ -25,13 +25,12 @@ public class CheckoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCheckoutBinding b = DataBindingUtil.setContentView(this, R.layout.activity_checkout);
-
         // TODO: set  values for current user and current product mayhaps from id from getIntent().getExtra()
 
-        b.name.setText(currentProduct.getProductName());
-        b.price.setText("$" + currentProduct. getPrice());
-        b.desc.setText(currentProduct.getProductDescription());
-        b.image.setImageURI(currentProduct.getImage());
+//        b.name.setText(currentProduct.getProductName());
+//        b.price.setText("$" + currentProduct. getPrice());
+//        b.desc.setText(currentProduct.getProductDescription());
+//        b.image.setImageURI(currentProduct.getImage());
         b.submit.setOnClickListener(v -> {
             variation = currentProduct.getVariations().get(0);
             quantity = 1;
@@ -42,28 +41,28 @@ public class CheckoutActivity extends AppCompatActivity {
             dialog.setCancelable(true);
             dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
-            bind.imageView8.setImageURI(currentProduct.getImage());
-            bind.textView7.setText(currentProduct.getProductName());
-            bind.textView8.setText("$"+currentProduct.getPrice());
+//            bind.imageView8.setImageURI(currentProduct.getImage());
+//            bind.textView7.setText(currentProduct.getProductName());
+//            bind.textView8.setText("$"+currentProduct.getPrice());
             bind.tvQuantity.setText(quantity + "x");
 //            bind.recyclerView3. TODO: rv in dialog
 
             bind.btnMinus.setOnClickListener(v1 -> {
                 quantity--;
                 if (quantity < 1) quantity = 1;
-                 bind.tvQuantity.setText(quantity + "x");
+//                 bind.tvQuantity.setText(quantity + "x");
             });
 
             bind.btnMinus.setOnClickListener(v1 -> {
                 quantity++;
                 if (quantity > currentProduct.getStock()) quantity = currentProduct.getStock();
-                bind.tvQuantity.setText(quantity + "x");
+//                bind.tvQuantity.setText(quantity + "x");
             });
 
             bind.submit.setOnClickListener(v1 -> {
                 Intent intent = new Intent(CheckoutActivity.this, DisplayBeforePurchase.class);
-                intent.putExtra("userId", currentUser.getId());
-                intent.putExtra("productId", currentProduct.getId());
+//                intent.putExtra("userId", currentUser.getId());
+//                intent.putExtra("productId", currentProduct.getId());
                 startActivity(intent);
                 finish();
             });

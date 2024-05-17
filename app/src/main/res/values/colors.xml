@@ -5,6 +5,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="strokeColor">#272776</color>
+    <color name="lightColor">#8585CF</color>
 
     <color name="bg_color">#F8F8F8</color>
 </resources>
