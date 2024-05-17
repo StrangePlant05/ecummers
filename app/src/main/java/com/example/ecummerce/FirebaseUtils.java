@@ -7,19 +7,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.List;
 import java.util.Map;
+import com.example.ecummerce.FirebaseInterface.*;
 
 public class FirebaseUtils {
-
-    public interface EmailAuth{
-        void changeLayout(boolean change);
-    }
-    public interface LoginComplete{
-        void loginSuccess(boolean allow);
-    }
-    public interface DuplicatePhoneNumber{
-        void allowSignup(boolean nodupe);
-    }
 
     public static void addAccount(FirebaseFirestore f_instance, Map map){
         //Map keys: email, password, full_name, address, phone_number, type
@@ -69,6 +61,28 @@ public class FirebaseUtils {
                         duplicate.allowSignup(true);
                     }
                 });
+    }
+
+    public static void addProducts(FirebaseFirestore f_instance, Map products, ProductAdded added){
+        f_instance.collection("PRODUCTS")
+                .add(products)
+                .addOnCompleteListener(task->{
+                    if(task.isComplete()){
+                        added.addID(task.getResult().getId());
+                    }
+                });
+
+    }
+
+    public static void purchaseProducts(FirebaseFirestore f_instance, List<UserPurchase> purchase, String userID){
+        for (UserPurchase userp : purchase){
+            f_instance.collection("PURCHASES")
+                    .document(userID)
+                    .collection("USER_PURCHASES")
+                    .add(userp);
+        }
+
+
     }
 
 }

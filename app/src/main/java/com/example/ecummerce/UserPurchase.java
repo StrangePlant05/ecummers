@@ -1,6 +1,8 @@
 package com.example.ecummerce;
 
 import java.sql.Timestamp;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserPurchase {
     public static final String STATE_PROCESSING = "processing";
@@ -111,6 +113,13 @@ public class UserPurchase {
 
     public void setProductStateDescription(String productStateDescription) {
         this.productStateDescription = productStateDescription;
+    }
+
+    public Map addToMap(){
+        Map purchase = new HashMap();
+
+
+        return purchase;
     }
 }
 

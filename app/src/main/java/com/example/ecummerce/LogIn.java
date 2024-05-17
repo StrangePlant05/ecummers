@@ -24,6 +24,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import com.example.ecummerce.FirebaseInterface.*;
 
 public class LogIn extends AppCompatActivity {
 
@@ -50,7 +51,7 @@ public class LogIn extends AppCompatActivity {
         });
 
         bind.button.setOnClickListener(v -> {
-            FirebaseUtils.checkPhoneNumber(bind.number.getText().toString(), FirebaseFirestore.getInstance(), new FirebaseUtils.DuplicatePhoneNumber() {
+            FirebaseUtils.checkPhoneNumber(bind.number.getText().toString(), FirebaseFirestore.getInstance(), new DuplicatePhoneNumber() {
                 @Override
                 public void allowSignup(boolean nodupe) {
                     if(nodupe){

@@ -51,6 +51,19 @@ public class User {
     public void setType(String type) {
         this.type = type;
     }
+    private String id;
+
+    public User(String id, String email, String password, String phone_number, String full_name, String address, String type, int age) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.phone_number = phone_number;
+        this.full_name = full_name;
+        this.address = address;
+        this.type = type;
+        this.age = age;
+    }
+
     private String email;
     private String password;
     private String phone_number;
