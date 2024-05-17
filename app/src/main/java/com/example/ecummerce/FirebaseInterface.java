@@ -1,5 +1,7 @@
 package com.example.ecummerce;
 
+import java.util.List;
+
 public class FirebaseInterface {
     public interface EmailAuth{
         void changeLayout(boolean change);
@@ -12,5 +14,8 @@ public class FirebaseInterface {
     }
     public interface ProductAdded{
         void addID(String addID);
+    }
+    public interface GetAllProducts{
+        void getProductS(List<Product> products);
     }
 }

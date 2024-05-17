@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.ecummerce.databinding.RvProductsBinding;
 
 import java.util.List;
@@ -30,8 +31,11 @@ public class RV_AllProducts extends RecyclerView.Adapter<RV_AllProducts.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RV_AllProducts.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RV_AllProducts.ViewHolder h, int position) {
         Product p = products.get(position);
+
+        h.bind.name.setText(p.getProductName());
+        Glide.with(c).load(p.getImage()).into(h.bind.img);
     }
 
     @Override

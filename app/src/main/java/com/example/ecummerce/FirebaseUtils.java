@@ -1,15 +1,21 @@
 package com.example.ecummerce;
 
 import android.content.Context;
+import android.net.Uri;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import com.example.ecummerce.FirebaseInterface.*;
+import com.google.firebase.storage.StorageReference;
 
 public class FirebaseUtils {
 
@@ -63,13 +69,20 @@ public class FirebaseUtils {
                 });
     }
 
-    public static void addProducts(FirebaseFirestore f_instance, Map products, ProductAdded added){
-        f_instance.collection("PRODUCTS")
-                .add(products)
-                .addOnCompleteListener(task->{
-                    if(task.isComplete()){
-                        added.addID(task.getResult().getId());
-                    }
+    public static void addProducts(FirebaseFirestore f_instance, Map products, ProductAdded added, StorageReference storage, Uri uri){
+        storage.putFile(uri)
+                .addOnSuccessListener(complete -> {
+                   storage.getDownloadUrl().addOnSuccessListener(complete1->{
+                          String result = complete1.toString();
+                          products.put("itemImage", result);
+                          f_instance.collection("PRODUCTS")
+                                  .add(products)
+                                  .addOnCompleteListener(task->{
+                                      if(task.isComplete()){
+                                          added.addID(task.getResult().getId());
+                                      }
+                                  });
+                   });
                 });
 
     }
@@ -84,5 +97,33 @@ public class FirebaseUtils {
 
 
     }
+
+    public static void retrieveAllProducts(FirebaseFirestore f_instance){
+        List<Product> products = new ArrayList<>();
+
+        f_instance.collection("PRODUCTS")
+                .addSnapshotListener((snap, e)->{
+                   if(e!=null) return;
+
+                   for (DocumentChange dc: snap.getDocumentChanges()){
+                       DocumentSnapshot doc = dc.getDocument();
+                       switch (dc.getType()){
+                           case ADDED:
+                           case MODIFIED:
+                               List<String> a = (List<String>) doc.get("variations");
+                               products.add(new Product(doc.getId(), doc.getString("productName"),
+                                       doc.getString("productDescription"), doc.getString("seller"),
+                                               doc.getDouble("price"), (int)doc.get("quantity"),
+                                       (int)doc.get("stock"), Uri.parse(doc.getString("itemImage")), a));
+
+                               break;
+                       }
+                   }
+                });
+
+
+    }
+
+
 
 }
