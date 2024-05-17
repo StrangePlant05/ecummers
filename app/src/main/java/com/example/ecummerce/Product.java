@@ -3,6 +3,7 @@ package com.example.ecummerce;
 import android.net.Uri;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Product {
@@ -14,6 +15,15 @@ public class Product {
     private int quantity;
     private int stock;
     private Uri image;
+    private List<String> variations;
+
+    public List<String> getVariations() {
+        return variations;
+    }
+
+    public void setVariations(List<String> variations) {
+        this.variations = variations;
+    }
 
     public String getId() {
         return id;
@@ -71,7 +81,7 @@ public class Product {
         this.stock = stock;
     }
 
-    public Product(String id, String productName, String productDescription, String seller, double price, int quantity, int stock, Uri image) {
+    public Product(String id, String productName, String productDescription, String seller, double price, int quantity, int stock, Uri image, List<String> variations) {
         this.id = id;
         this.productName = productName;
         this.productDescription = productDescription;
@@ -80,9 +90,10 @@ public class Product {
         this.quantity = quantity;
         this.stock = stock;
         this.image = image;
+        this.variations = variations;
     }
 
-    public Product(String productName, String productDescription, String seller, double price, int quantity, int stock, Uri image) {
+    public Product(String productName, String productDescription, String seller, double price, int quantity, int stock, Uri image, List<String> variations) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.seller = seller;
@@ -90,6 +101,7 @@ public class Product {
         this.quantity = quantity;
         this.stock = stock;
         this.image = image;
+        this.variations = variations;
     }
 
     public Uri getImage() {
