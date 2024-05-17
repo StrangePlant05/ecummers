@@ -175,14 +175,16 @@
                         </FrameLayout>
                     </androidx.cardview.widget.CardView>
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:background="@drawable/btn_style"
+                        android:textColor="@color/white"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:id="@+id/submit"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        android:text="Submit" />
+                        android:text="" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
