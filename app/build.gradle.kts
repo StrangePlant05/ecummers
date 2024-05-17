@@ -37,6 +37,7 @@ android {
 }
 
 dependencies {
+
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     implementation ("com.hbb20:ccp:2.7.0")
@@ -47,6 +48,7 @@ dependencies {
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.auth)
     implementation("com.google.firebase:firebase-storage:21.0.0")
+    implementation(libs.gson)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
