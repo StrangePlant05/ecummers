@@ -1,5 +1,7 @@
 package com.example.ecummerce;
 
+import android.net.Uri;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +13,7 @@ public class Product {
     private double price;
     private int quantity;
     private int stock;
+    private Uri image;
 
     public String getId() {
         return id;
@@ -68,7 +71,7 @@ public class Product {
         this.stock = stock;
     }
 
-    public Product(String id, String productName, String productDescription, String seller, double price, int quantity, int stock) {
+    public Product(String id, String productName, String productDescription, String seller, double price, int quantity, int stock, Uri image) {
         this.id = id;
         this.productName = productName;
         this.productDescription = productDescription;
@@ -76,16 +79,27 @@ public class Product {
         this.price = price;
         this.quantity = quantity;
         this.stock = stock;
+        this.image = image;
     }
 
-    public Product(String productName, String productDescription, String seller, double price, int quantity, int stock) {
+    public Product(String productName, String productDescription, String seller, double price, int quantity, int stock, Uri image) {
         this.productName = productName;
         this.productDescription = productDescription;
         this.seller = seller;
         this.price = price;
         this.quantity = quantity;
         this.stock = stock;
+        this.image = image;
     }
+
+    public Uri getImage() {
+        return image;
+    }
+
+    public void setImage(Uri image) {
+        this.image = image;
+    }
+
     public Map addToMap(){
         Map map = new HashMap();
 
