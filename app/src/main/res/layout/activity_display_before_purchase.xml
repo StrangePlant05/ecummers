@@ -268,10 +268,12 @@
 
 
     <androidx.cardview.widget.CardView
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         app:cardCornerRadius="0dp"
         android:id="@+id/paymentMethod"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/placeOrder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -286,12 +288,14 @@
             android:text="Select Payment Method"/>
 
         <HorizontalScrollView
+            android:layout_gravity="center"
+            android:scrollbars="none"
             android:layout_marginTop="25dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:padding="10dp"
+                android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
